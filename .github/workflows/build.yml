@@ -33,6 +33,9 @@ jobs:
           docker push ansobimat/tic-tac-toe:latest
         env:
           DOCKER_CLI_ACI: 1 
+          
+      - name: Image scan
+        run: trivy image ansobimat/tic-tac-toe:latest > trivyimage.txt
         
       # If you wish to fail your job when the Quality Gate is red, uncomment the
       # following lines. This would typically be used to fail a deployment.
